@@ -2,6 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## `conceptos basicos de JavaScript`
+
+<https://codesandbox.io/s/reactjs-uh6oxi?file=/src/index.js/>
+
+## `Guia del curso`
+
+<https://bluuweb.github.io/react-udemy/>
+
 ## Available Scripts
 
 In the project directory, you can run:
