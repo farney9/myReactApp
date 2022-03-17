@@ -4,12 +4,12 @@ const Forms = () => {
 
     const [fruta, setFruta] = React.useState('')
     const [descripcion, setDescripcion] = React.useState('')
-    const [lista, setLista] = React.useState([])
-    const save = (evento) => {
+    const [lista, setLista] = React.useState([{nombreFruta: '', nombreDescripcion: ''}])
+    const save = (evento: any) => {
         evento.preventDefault()
 
         if (!fruta.trim()) {
-            console.log('Campor fruta está vacío');
+            console.log('Campo fruta está vacío');
             return
         }
 
@@ -17,7 +17,7 @@ const Forms = () => {
             console.log('Campor descripcion está vacío');
             return
         }
-        console.log(`procesasndo datos.. ${fruta} ${descripcion}`);
+        console.log(`procesasndo datos.. \n${fruta} ${descripcion}`);
 
         setLista([
             ...lista,
@@ -48,7 +48,7 @@ const Forms = () => {
                         <button
                             type="submit"
                             className="btn btn-primary btn-block rounded-pill">
-                            <i className="far fa-save fa-2x"></i> Add
+                            Add <i className="fas fa-plus"></i> 
                         </button>
                     </div>
                 </form>

@@ -1,10 +1,9 @@
-import React from 'react'
-import Evento from './Evento'
+import CrudSimple from "./CrudSimple"
 
 const Demo = () => {
   return (
     <div>
-      <Evento/>
+      <CrudSimple/>
     </div>
   )
 }

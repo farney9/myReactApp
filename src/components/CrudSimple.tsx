@@ -1,20 +1,20 @@
-import React from 'react'
-import shortid from 'shortid'
+import { useState } from 'react'
+import { nanoid } from "nanoid";
 
 const CrudSimple = () => {
-    const [tarea, setTarea] = React.useState('')
-    const [tareas, setTareas] = React.useState([])
-    const [modoEdicion, setModoEdicion] = React.useState(false)
-    const [id, setId] = React.useState('')
-    const [error, setError] = React.useState(null)
+    const [tarea, setTarea] = useState('')
+    const [tareas, setTareas] = useState([{}])
+    const [modoEdicion, setModoEdicion] = useState(false)
+    const [id, setId] = useState<string>()
+    const [error, setError] = useState('')
 
-    const editar = item => {
+    const editar = (item: { tarea: string, id: string }) => {
         setModoEdicion(true)
         setTarea(item.tarea) // tarea es la propiedad del objeto: el objeto tiene 2 propiedades: id, tarea
         setId(item.id)
     }
 
-    const editarTarea = e => {
+    const editarTarea = (e: { preventDefault: () => void; }) => {
         e.preventDefault()
         if(!tarea.trim()){
           console.log('Campo vacio')
@@ -26,10 +26,10 @@ const CrudSimple = () => {
         setModoEdicion(false)
         setTarea('')
         setId('')
-        setError(null)
+        setError('')
     }
 
-    const agregarTarea = e => {
+    const agregarTarea = (e: { preventDefault: () => void; }) => {
         e.preventDefault()
         if(!tarea.trim()){
           console.log('Campo vacio')
@@ -38,13 +38,13 @@ const CrudSimple = () => {
         }
         setTareas([
             ...tareas,
-            {tarea, id: shortid.generate()}
+            {id: nanoid(10), tarea}
         ])
         setTarea('')
-        setError(null)
+        setError('')
       }
 
-      const eliminarTarea = id => {
+      const eliminarTarea = (id: any) => {
           const arrayFiltrado = tareas.filter(item => item.id !== id)
           setTareas(arrayFiltrado)
       }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 
 const Counter = () => {
   // Declara una nueva variable de estado, la cual llamaremos “count”
@@ -9,7 +9,7 @@ const Counter = () => {
     <div>
         <hr/>
       <h2>Has dado click <strong>{count}</strong> veces</h2>
-      <h4>{ count > 2 ? 'Es mayor a 2' : 'Es menor a 2'}</h4>
+      <h4>{ count % 2 ? `${count} Es primo` : `${count} No es primo`}</h4>
       <button
         className="btn btn-success"
         onClick={() => setCount(count + 1)}>

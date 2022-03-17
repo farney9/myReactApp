@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 
 const Lists = () => {
     const estadoinicial = [
-        {id:1, texto: 'Tarea 1'},
-        {id:2, texto: 'Tarea 2'},
-        {id:3, texto: 'Tarea 3'},
+        {id:1, texto: 'Task 1'},
+        {id:2, texto: 'Task 2'},
+        {id:3, texto: 'Task 3'},
     ]
 
     const [list, setList] = useState(estadoinicial)
@@ -18,7 +18,7 @@ const Lists = () => {
         console.log('click');
         setList([ 
             ...list,
-            {id:4, texto: 'Tarea 4'}
+            {id: 4, texto: 'Task 4'}
 
         ])
     }
@@ -28,14 +28,14 @@ const Lists = () => {
             <hr/>
             <h2>Listas</h2>
                 {
-                    list.map((item, index) => {
+                    list.map((item) => {
                         return <h4 key={ item.id }>{item.texto}</h4>
                     })
                 }
             <button
                 className="btn btn-success"
                 onClick={() => addItemToList()}>
-                Click me
+                Add task
             </button>
             
         </div>
