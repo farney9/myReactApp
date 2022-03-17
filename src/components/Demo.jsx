@@ -1,5 +1,5 @@
 import React from 'react'
-import Evento  from './Evento';
+import Evento from './Evento'
 
 const Demo = () => {
   return (
