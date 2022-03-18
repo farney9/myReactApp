@@ -82,13 +82,11 @@ const CrudSimple = () => {
                                         <button 
                                             onClick={() => eliminarTarea(item.id)}
                                             className="btn btn-sm btn-danger float-end mx-2">
-                                                <i className="far fa-trash-alt"></i> Eliminar
-                                        </button>
+                                                <i className="far fa-trash-alt"></i>                                         </button>
                                         <button 
                                             onClick={ () => editar(item)}
                                             className="btn btn-sm btn-warning float-end">
-                                                <i className="far fa-edit"></i> Editar
-                                        </button>
+                                                <i className="far fa-edit"></i>                                         </button>
                                     </li>
                                 ))
                             )

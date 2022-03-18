@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## `deploy on`
+
+<https://farney-reactjs-app.netlify.app/demo>
+
 ## `conceptos basicos de JavaScript`
 
 <https://codesandbox.io/s/reactjs-uh6oxi?file=/src/index.js/>
