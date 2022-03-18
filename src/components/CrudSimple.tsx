@@ -3,12 +3,15 @@ import { nanoid } from "nanoid";
 
 const CrudSimple = () => {
     const [tarea, setTarea] = useState('')
-    const [tareas, setTareas] = useState([{}])
+    const [tareas, setTareas] = useState([{id: '', tarea: ''}])
     const [modoEdicion, setModoEdicion] = useState(false)
-    const [id, setId] = useState<string>()
+    const [id, setId] = useState<string | undefined >(undefined)
     const [error, setError] = useState('')
 
     const editar = (item: { tarea: string, id: string }) => {
+
+        console.log(item);
+        
         setModoEdicion(true)
         setTarea(item.tarea) // tarea es la propiedad del objeto: el objeto tiene 2 propiedades: id, tarea
         setId(item.id)
@@ -16,12 +19,15 @@ const CrudSimple = () => {
 
     const editarTarea = (e: { preventDefault: () => void; }) => {
         e.preventDefault()
+        
         if(!tarea.trim()){
           console.log('Campo vacio')
           setError('El campo es obligatorio')
           return
         }
-        const arrayEditado = tareas.map(item => item.id === id ? {id, tarea} : item)
+
+        const arrayEditado = tareas!.map(item => item.id === id ? {id, tarea} : item)
+        
         setTareas(arrayEditado)
         setModoEdicion(false)
         setTarea('')
@@ -30,7 +36,11 @@ const CrudSimple = () => {
     }
 
     const agregarTarea = (e: { preventDefault: () => void; }) => {
+
         e.preventDefault()
+
+        console.log(tarea);
+
         if(!tarea.trim()){
           console.log('Campo vacio')
           setError('El campo es obligatorio')
@@ -38,8 +48,11 @@ const CrudSimple = () => {
         }
         setTareas([
             ...tareas,
-            {id: nanoid(10), tarea}
+            {id: nanoid(10), tarea: tarea}
         ])
+
+        console.log(tareas);
+        
         setTarea('')
         setError('')
       }
@@ -96,7 +109,8 @@ const CrudSimple = () => {
                             type="text" 
                             className="form-control mb-2"
                             placeholder="Ingrese Tarea"
-                            onChange={e => setTarea(e.target.value)} value={ tarea}/>
+                            onChange={e => setTarea(e.target.value)} 
+                            value={ tarea }/>
                         {
                             error ? <div className="text-danger">{error}</div> : null
                             
