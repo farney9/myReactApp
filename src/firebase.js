@@ -7,7 +7,7 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyACk9CWr3k3FI8s8jxSvbgEr8oxdhhXzzY",
+  apiKey: process.env.REACT_APP_FIREBASE_API,
   authDomain: "fir-photos-5e1e3.firebaseapp.com",
   projectId: "fir-photos-5e1e3",
   storageBucket: "fir-photos-5e1e3.appspot.com",
