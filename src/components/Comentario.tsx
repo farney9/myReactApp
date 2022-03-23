@@ -1,6 +1,15 @@
 import React from 'react'
 
-const Comentario = (props) => {
+interface IComment {
+    imageUrl?: string;
+    persona?: string;
+    texto?: string;
+}
+
+const Comentario = (props:IComment ) => {
+// console.log(props);
+
+
     return (
         <div className="row d-flex">
             <hr/>

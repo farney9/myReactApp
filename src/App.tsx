@@ -5,7 +5,7 @@
 // import Variables from "./components/Variables.jsx";
 // import Forms from "./components/Forms.jsx";
 // import CrudSimple from "./components/CrudSimple.jsx";
-// import Saludo from "./components/Saludo.jsx";
+// import Saludo from "./components/Saludo";
 
 import RouteComponent from './components/RouteComponent';
 
@@ -13,6 +13,7 @@ function App() {
   return (
     <div className='App'>
       <div>
+        <RouteComponent/>
         {/* llamado al componente Parrafo
         Los Nombres de componentes se deben nombrar con mayúscula inicial */}
 
@@ -23,9 +24,7 @@ function App() {
         {/* <Lists/> */}
         {/* <Forms/> */}
         {/* <CrudSimple/> */}
-        {/* <Saludo persona="Farney" edad={38}/> */}
 
-        <RouteComponent/>
       </div>
     </div>
   );

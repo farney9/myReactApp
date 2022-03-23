@@ -12,7 +12,7 @@ const Civilizacion = () => {
         const getData = async () => {
             const data = await fetch(`https://age-of-empires-2-api.herokuapp.com/api/v1/civilization/${id}`)
             const pueblo = await data.json()
-            console.log(pueblo);
+            // console.log(pueblo);
             setCivilizacion(pueblo)
         }
 
@@ -21,8 +21,8 @@ const Civilizacion = () => {
 
     return (
         <div>
-            <h4>{civilizacion.name}</h4>
-            <p>{civilizacion.team_bonus}</p>
+            <h2>{civilizacion.name}</h2>
+            <h5>{civilizacion.team_bonus}</h5>
         </div>
     )
 }

@@ -8,6 +8,7 @@ import Login from './Login';
 import Admin from './Admin';
 import Nosotros from './Nosotros';
 import Navbar from './Navbar';
+import Saludando from './Saludando';
 
 // FireBase
 import { auth } from "../firebase";
@@ -33,6 +34,7 @@ const RouteComponent = () => {
                 <Navbar fireBaseUser={fireBaseUser}/>
                 <div className="container my-5">
                     <Switch>
+                        {/* exct se usa para establecer la pagina o ruta de inicio */}
                         <Route path="/" exact><Inicio/></Route>
                         <Route path="/login"><Login/></Route>
                         <Route path="/reset"><Reset/></Route>
@@ -41,6 +43,7 @@ const RouteComponent = () => {
                         <Route path="/nosotros/:id"><Civilizacion/></Route>
                         <Route path="/inicio"><Inicio/></Route>
                         <Route path="/demo"><Demo/></Route>
+                        <Route path="/saludando"><Saludando/></Route>
                         <Route path="/contacto"><Contacto/></Route>
                         <Route path="/crudfirebase"><CrudFirebase/></Route>
                     </Switch>

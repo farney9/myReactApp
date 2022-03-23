@@ -1,13 +1,21 @@
 import React from 'react'
 import Comentario from './Comentario'
 
-const Saludo = (props) => {
+interface Isaludo {
+    persona?: string;
+    edad?: number;
+}
 
-    // console.log(this.props);
+const Saludo = (props: Isaludo) => {
 
+    // console.log(props);
+    
     return (
-        <div>
-            <h1>Componentes dinámicos</h1>
+        <>
+            <h1>Componentes dinámicos PROPS</h1>
+            <p>Conceptualmente, los componentes son como las funciones de JavaScript. Aceptan entradas arbitrarias (llamadas “props”) y devuelven a React elementos que describen lo que debe aparecer en la pantalla.</p>
+            <p>Ejemplo:</p>
+            
             <h4>Hola {props.persona}!</h4>
             <h4>Felices {props.edad} años!</h4>
             <hr/>
@@ -32,7 +40,7 @@ const Saludo = (props) => {
                 persona="Jiménez"
                 imageUrl="//picsum.photos/300/200"/>
 
-        </div>
+        </>
     )
 }
 
